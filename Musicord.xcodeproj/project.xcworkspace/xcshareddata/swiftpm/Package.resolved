@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LaunchAtLogin",
+        "repositoryURL": "https://github.com/sindresorhus/LaunchAtLogin",
+        "state": {
+          "branch": "main",
+          "revision": "e8171b3e38a2816f579f58f3dac1522aa39efe41",
+          "version": null
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "51c3fc2e4a0fcdf4a25089b288dd65b73df1b0ef",
+          "version": "2.37.0"
+        }
+      },
+      {
+        "package": "SwiftcordIPC",
+        "repositoryURL": "https://github.com/cbyrneee/SwiftcordIPC.git",
+        "state": {
+          "branch": "main",
+          "revision": "8499c4a36f285f68be679d31f81041a5b563dfe0",
+          "version": null
+        }
+      },
+      {
+        "package": "CachedAsyncImage",
+        "repositoryURL": "git@github.com:lorenzofiamingo/SwiftUI-CachedAsyncImage.git",
+        "state": {
+          "branch": null,
+          "revision": "22e0873d0b0ac9a7b932839cdb9fabd018185cda",
+          "version": "1.10.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
