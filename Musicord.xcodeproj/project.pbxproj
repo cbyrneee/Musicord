@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		127ECD0627AAAB2A005B7274 /* SwiftcordIPC in Frameworks */ = {isa = PBXBuildFile; productRef = 127ECD0527AAAB2A005B7274 /* SwiftcordIPC */; };
+		120406B327B85E9600B36A3A /* SwiftcordIPC in Frameworks */ = {isa = PBXBuildFile; productRef = 120406B227B85E9600B36A3A /* SwiftcordIPC */; };
 		12A9AD5D27A5A82C00450F22 /* MusicordApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9AD5C27A5A82C00450F22 /* MusicordApp.swift */; };
 		12A9AD5F27A5A82C00450F22 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9AD5E27A5A82C00450F22 /* UserView.swift */; };
 		12A9AD6127A5A82D00450F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A9AD6027A5A82D00450F22 /* Assets.xcassets */; };
@@ -16,6 +16,7 @@
 		12AD743027B82705000FCD29 /* MusicBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AD742F27B82705000FCD29 /* MusicBridge.swift */; };
 		12AD743227B82766000FCD29 /* MusicAppHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AD743127B82766000FCD29 /* MusicAppHandler.swift */; };
 		12AD743427B82A0C000FCD29 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AD743327B82A0C000FCD29 /* AppleScriptObjC.framework */; };
+		12AD743727B85835000FCD29 /* SwiftcordIPC in Frameworks */ = {isa = PBXBuildFile; productRef = 12AD743627B85835000FCD29 /* SwiftcordIPC */; };
 		12B1BC4B27A6DF1E002E4FF8 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 12B1BC4A27A6DF1E002E4FF8 /* CachedAsyncImage */; };
 		12B1BC4D27A6E1CE002E4FF8 /* DiscordHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC4C27A6E1CE002E4FF8 /* DiscordHandler.swift */; };
 		12B1BC4F27A6E321002E4FF8 /* TrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC4E27A6E321002E4FF8 /* TrackData.swift */; };
@@ -56,8 +57,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				12AD743427B82A0C000FCD29 /* AppleScriptObjC.framework in Frameworks */,
+				12AD743727B85835000FCD29 /* SwiftcordIPC in Frameworks */,
+				120406B327B85E9600B36A3A /* SwiftcordIPC in Frameworks */,
 				12C210EE27A873930054B6CB /* LaunchAtLogin in Frameworks */,
-				127ECD0627AAAB2A005B7274 /* SwiftcordIPC in Frameworks */,
 				12B1BC4B27A6DF1E002E4FF8 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,13 +67,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12623C7227A69B5300B1740B /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		12623C7627A69BC200B1740B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				12AD742C27B826DD000FCD29 /* MusicBridge.applescript */,
-				12623C7227A69B5300B1740B /* Packages */,
 				12A9AD5B27A5A82C00450F22 /* Musicord */,
 				12A9AD5A27A5A82C00450F22 /* Products */,
 				12623C7627A69BC200B1740B /* Frameworks */,
@@ -174,7 +168,8 @@
 			packageProductDependencies = (
 				12B1BC4A27A6DF1E002E4FF8 /* CachedAsyncImage */,
 				12C210ED27A873930054B6CB /* LaunchAtLogin */,
-				127ECD0527AAAB2A005B7274 /* SwiftcordIPC */,
+				12AD743627B85835000FCD29 /* SwiftcordIPC */,
+				120406B227B85E9600B36A3A /* SwiftcordIPC */,
 			);
 			productName = Musicord;
 			productReference = 12A9AD5927A5A82C00450F22 /* Musicord.app */;
@@ -207,7 +202,7 @@
 			packageReferences = (
 				12B1BC4927A6DF1E002E4FF8 /* XCRemoteSwiftPackageReference "SwiftUI-CachedAsyncImage" */,
 				12C210EC27A873920054B6CB /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
-				127ECD0427AAAB2A005B7274 /* XCRemoteSwiftPackageReference "SwiftcordIPC" */,
+				120406B127B85E9600B36A3A /* XCRemoteSwiftPackageReference "SwiftcordIPC" */,
 			);
 			productRefGroup = 12A9AD5A27A5A82C00450F22 /* Products */;
 			projectDirPath = "";
@@ -471,7 +466,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		127ECD0427AAAB2A005B7274 /* XCRemoteSwiftPackageReference "SwiftcordIPC" */ = {
+		120406B127B85E9600B36A3A /* XCRemoteSwiftPackageReference "SwiftcordIPC" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cbyrneee/SwiftcordIPC.git";
 			requirement = {
@@ -498,9 +493,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		127ECD0527AAAB2A005B7274 /* SwiftcordIPC */ = {
+		120406B227B85E9600B36A3A /* SwiftcordIPC */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 127ECD0427AAAB2A005B7274 /* XCRemoteSwiftPackageReference "SwiftcordIPC" */;
+			package = 120406B127B85E9600B36A3A /* XCRemoteSwiftPackageReference "SwiftcordIPC" */;
+			productName = SwiftcordIPC;
+		};
+		12AD743627B85835000FCD29 /* SwiftcordIPC */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = SwiftcordIPC;
 		};
 		12B1BC4A27A6DF1E002E4FF8 /* CachedAsyncImage */ = {

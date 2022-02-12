@@ -14,5 +14,5 @@ struct TrackData {
     let startTimestamp: Double?
     var albumArt: String?
     var url: String?
-    let paused: Bool
+    var paused: Bool
 }

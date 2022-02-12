@@ -53,21 +53,24 @@ class MusicAppHandler : ObservableObject {
         self.wasRunning = bridge.isRunning
                 
         guard let info = bridge.trackInfo else {
+            if self.track == nil {
+                return
+            }
+            
+            self.track = nil
+            delegate?.onTrackDataUpdate()
             return
         }
                 
         guard let artist = info["trackArtist"] as? String else {
-            self.track = nil
             return
         }
         
         guard let name = info["trackName"] as? String else {
-            self.track = nil
             return
         }
         
         guard let album = info["trackAlbum"] as? String else {
-            self.track = nil
             return
         }
         

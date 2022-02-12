@@ -46,11 +46,12 @@ class RichPresenceHandler : DiscordHandlerDelegate, MusicAppHandlerDelegate {
     }
     
     private func updatePresence() {
-        guard let track = MusicAppHandler.shared.track else {
-            return
-        }
-                        
         do {
+            guard let track = MusicAppHandler.shared.track else {
+                try DiscordHandler.shared.clearPresence()
+                return
+            }
+            
             try DiscordHandler.shared.setPresence(track: track)
         } catch (let error) {
             // TODO: Error handling
