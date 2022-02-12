@@ -12,7 +12,7 @@ struct TrackData {
     let album: String?
     let duration, elapsed: Double
     let startTimestamp: Double?
-    let albumArt: String?
-    let url: String?
+    var albumArt: String?
+    var url: String?
     let paused: Bool
 }

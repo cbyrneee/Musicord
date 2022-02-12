@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.shared = self
-        
+
         setupStatusItem()
         setupMenu()
                 

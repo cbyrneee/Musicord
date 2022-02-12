@@ -44,6 +44,7 @@ class DiscordHandler : ObservableObject {
             }
         }
         
+        
         ipc.onDisconnect = {
             self.connected = false
             self.connecting = false
@@ -78,6 +79,8 @@ class DiscordHandler : ObservableObject {
             ipc.disconnect()
             return
         }
+        
+        print("[DiscordHandler] Setting presence")
 
         ipc.setPresence { data in
             data.details = track.name
@@ -92,10 +95,9 @@ class DiscordHandler : ObservableObject {
             
             // We only want to show the track's progress if it's enabled, the track isn't paused, and we have received a duration
             if AppSettings.shared.showTrackProgress && !track.paused && track.duration != 0 {
-                let startTimestamp = track.startTimestamp ?? Date.now.timeIntervalSince1970
-                let start = startTimestamp - track.elapsed
+                let start = track.startTimestamp ?? Date.now.timeIntervalSince1970
                 let end = start + track.duration
-
+                
                 // Discord doesn't like when start or end is less than or equal to 0
                 if start > 0 && end > 0 {
                     data.timestamps = timestamp(start: Int(start), end: Int(end))

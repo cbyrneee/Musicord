@@ -8,24 +8,20 @@
 import Foundation
 import SwiftcordIPC
 
-class RichPresenceHandler : DiscordHandlerDelegate, MediaRemoteHandlerDelegate {
+class RichPresenceHandler : DiscordHandlerDelegate, MusicAppHandlerDelegate {
     func register() throws {
-        MediaRemoteHandler.shared.delegate = self
+        MusicAppHandler.shared.delegate = self
         DiscordHandler.shared.delegate = self
 
-        MediaRemoteHandler.shared.register()
+        try DiscordHandler.shared.register()
     }
     
     func onReady(data: ReadyData) {
-        guard let track = MediaRemoteHandler.shared.trackData else {
-            return
-        }
-        
-        print("connected")
-        self.updatePresence(track: track)
+        print("[RichPresenceHandler] Ready!")
+        self.updatePresence()
     }
     
-    func onTrackDataUpdate(_ data: TrackData) {
+    func onTrackDataUpdate() {
         if !DiscordHandler.shared.connected && !DiscordHandler.shared.connecting {
             do {
                 try DiscordHandler.shared.register()
@@ -35,10 +31,14 @@ class RichPresenceHandler : DiscordHandlerDelegate, MediaRemoteHandlerDelegate {
             }
         }
         
-        self.updatePresence(track: data)
+        self.updatePresence()
     }
     
-    private func updatePresence(track: TrackData) {
+    private func updatePresence() {
+        guard let track = MusicAppHandler.shared.track else {
+            return
+        }
+                        
         do {
             try DiscordHandler.shared.setPresence(track: track)
         } catch (let error) {

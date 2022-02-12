@@ -70,7 +70,7 @@ struct SettingsView: View {
         .padding(20)
         
         Button {
-            guard let track = MediaRemoteHandler.shared.trackData else {
+            guard let track = MusicAppHandler.shared.track else {
                 return
             }
             

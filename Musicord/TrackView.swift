@@ -10,10 +10,10 @@ import SwiftcordIPC
 import CachedAsyncImage
 
 struct TrackView: View {
-    @ObservedObject var mediaRemote = MediaRemoteHandler.shared
+    @ObservedObject var musicHandler = MusicAppHandler.shared
     
     var body: some View {
-        if let data = mediaRemote.trackData {
+        if let data = musicHandler.track {
             VStack(alignment: .leading) {
                 Text("Now Playing")
                     .fontWeight(.bold)

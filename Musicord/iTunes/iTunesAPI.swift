@@ -15,27 +15,31 @@ struct iTunesAPI {
     private init() {
     }
     
-    private static var requestCache: [Int : iTunesLookupResult] = [:]
-    private static var currentRequests: [Int] = []
+    private static var requestCache: [String : iTunesLookupResult] = [:]
+    private static var currentRequests: [String] = []
     
-    static func lookup(id: Int, completion: @escaping (Result<[iTunesLookupItem], Error>) -> Void) {
+    static func getCachedSearchResult(term: String) -> [iTunesLookupItem]? {
+        return requestCache[term]?.results
+    }
+    
+    static func searchAlbum(term: String, completion: @escaping (Result<[iTunesLookupItem], Error>) -> Void) {
         do {
             if requestCache.count >= 20 {
                 print("Clearing cache")
                 requestCache.removeAll()
             }
             
-            let url = try buildUrl("lookup", parameters: ["id": "\(id)"])
-            if let cached = requestCache[id] {
-                completion(.success(cached.results))
+            let url = try buildUrl("search", parameters: ["media": "music", "entity": "album", "limit": "1", "term": term])
+            if let cached = getCachedSearchResult(term: term) {
+                completion(.success(cached))
                 return
             }
             
-            if currentRequests.contains(id) {
+            if currentRequests.contains(term) {
                 completion(.failure(iTunesAPIError.alreadyFetching))
                 return
             } else {
-                currentRequests.append(id)
+                currentRequests.append(term)
             }
             
             URLSession.shared.dataTask(with: url) { data, _, error in
@@ -52,8 +56,8 @@ struct iTunesAPI {
                 do {
                     let decoded = try JSONDecoder().decode(iTunesLookupResult.self, from: data)
                     
-                    requestCache[id] = decoded
-                    if let index = currentRequests.firstIndex(of: id) {
+                    requestCache[term] = decoded
+                    if let index = currentRequests.firstIndex(of: term) {
                         currentRequests.remove(at: index)
                     }
                     completion(.success(decoded.results))

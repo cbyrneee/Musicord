@@ -12,13 +12,14 @@
 		12A9AD5F27A5A82C00450F22 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9AD5E27A5A82C00450F22 /* UserView.swift */; };
 		12A9AD6127A5A82D00450F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A9AD6027A5A82D00450F22 /* Assets.xcassets */; };
 		12A9AD6427A5A82D00450F22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A9AD6327A5A82D00450F22 /* Preview Assets.xcassets */; };
+		12AD742D27B826DD000FCD29 /* MusicBridge.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 12AD742C27B826DD000FCD29 /* MusicBridge.applescript */; };
+		12AD743027B82705000FCD29 /* MusicBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AD742F27B82705000FCD29 /* MusicBridge.swift */; };
+		12AD743227B82766000FCD29 /* MusicAppHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AD743127B82766000FCD29 /* MusicAppHandler.swift */; };
+		12AD743427B82A0C000FCD29 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AD743327B82A0C000FCD29 /* AppleScriptObjC.framework */; };
 		12B1BC4B27A6DF1E002E4FF8 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 12B1BC4A27A6DF1E002E4FF8 /* CachedAsyncImage */; };
 		12B1BC4D27A6E1CE002E4FF8 /* DiscordHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC4C27A6E1CE002E4FF8 /* DiscordHandler.swift */; };
 		12B1BC4F27A6E321002E4FF8 /* TrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC4E27A6E321002E4FF8 /* TrackData.swift */; };
-		12B1BC5127A6E655002E4FF8 /* MediaRemoteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC5027A6E655002E4FF8 /* MediaRemoteHandler.swift */; };
-		12B1BC5327A6E8FE002E4FF8 /* MediaRemoteFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC5227A6E8FE002E4FF8 /* MediaRemoteFramework.swift */; };
 		12B1BC5527A6F02A002E4FF8 /* RichPresenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC5427A6F02A002E4FF8 /* RichPresenceHandler.swift */; };
-		12B1BC5927A6F6EB002E4FF8 /* MRPlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC5827A6F6EB002E4FF8 /* MRPlaybackState.swift */; };
 		12B1BC5B27A6FC37002E4FF8 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1BC5A27A6FC37002E4FF8 /* TrackView.swift */; };
 		12C210EE27A873930054B6CB /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 12C210ED27A873930054B6CB /* LaunchAtLogin */; };
 		12E55FFE27A714FA00B0C040 /* iTunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E55FFD27A714FA00B0C040 /* iTunesAPI.swift */; };
@@ -35,12 +36,13 @@
 		12A9AD6327A5A82D00450F22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12A9AD6527A5A82D00450F22 /* Musicord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicord.entitlements; sourceTree = "<group>"; };
 		12A9AD6B27A5A8B600450F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		12AD742C27B826DD000FCD29 /* MusicBridge.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = MusicBridge.applescript; sourceTree = "<group>"; };
+		12AD742F27B82705000FCD29 /* MusicBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBridge.swift; sourceTree = "<group>"; };
+		12AD743127B82766000FCD29 /* MusicAppHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppHandler.swift; sourceTree = "<group>"; };
+		12AD743327B82A0C000FCD29 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		12B1BC4C27A6E1CE002E4FF8 /* DiscordHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordHandler.swift; sourceTree = "<group>"; };
 		12B1BC4E27A6E321002E4FF8 /* TrackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackData.swift; sourceTree = "<group>"; };
-		12B1BC5027A6E655002E4FF8 /* MediaRemoteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRemoteHandler.swift; sourceTree = "<group>"; };
-		12B1BC5227A6E8FE002E4FF8 /* MediaRemoteFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRemoteFramework.swift; sourceTree = "<group>"; };
 		12B1BC5427A6F02A002E4FF8 /* RichPresenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichPresenceHandler.swift; sourceTree = "<group>"; };
-		12B1BC5827A6F6EB002E4FF8 /* MRPlaybackState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRPlaybackState.swift; sourceTree = "<group>"; };
 		12B1BC5A27A6FC37002E4FF8 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		12E55FFD27A714FA00B0C040 /* iTunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPI.swift; sourceTree = "<group>"; };
 		12E55FFF27A7154100B0C040 /* iTunesLookupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesLookupResult.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12AD743427B82A0C000FCD29 /* AppleScriptObjC.framework in Frameworks */,
 				12C210EE27A873930054B6CB /* LaunchAtLogin in Frameworks */,
 				127ECD0627AAAB2A005B7274 /* SwiftcordIPC in Frameworks */,
 				12B1BC4B27A6DF1E002E4FF8 /* CachedAsyncImage in Frameworks */,
@@ -72,6 +75,7 @@
 		12623C7627A69BC200B1740B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12AD743327B82A0C000FCD29 /* AppleScriptObjC.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -79,6 +83,7 @@
 		12A9AD5027A5A82C00450F22 = {
 			isa = PBXGroup;
 			children = (
+				12AD742C27B826DD000FCD29 /* MusicBridge.applescript */,
 				12623C7227A69B5300B1740B /* Packages */,
 				12A9AD5B27A5A82C00450F22 /* Musicord */,
 				12A9AD5A27A5A82C00450F22 /* Products */,
@@ -102,9 +107,9 @@
 				12A9AD5E27A5A82C00450F22 /* UserView.swift */,
 				12E5600127A72F0700B0C040 /* SettingsView.swift */,
 				12E5600327A732E200B0C040 /* AppSettings.swift */,
+				12AD742E27B826F7000FCD29 /* MusicBridge */,
 				12E55FFC27A714ED00B0C040 /* iTunes */,
 				12B1BC5727A6F1B9002E4FF8 /* Discord */,
-				12B1BC5627A6F1B1002E4FF8 /* MediaRemote */,
 				12A9AD6B27A5A8B600450F22 /* Info.plist */,
 				12A9AD6027A5A82D00450F22 /* Assets.xcassets */,
 				12A9AD6527A5A82D00450F22 /* Musicord.entitlements */,
@@ -121,15 +126,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		12B1BC5627A6F1B1002E4FF8 /* MediaRemote */ = {
+		12AD742E27B826F7000FCD29 /* MusicBridge */ = {
 			isa = PBXGroup;
 			children = (
 				12B1BC4E27A6E321002E4FF8 /* TrackData.swift */,
-				12B1BC5027A6E655002E4FF8 /* MediaRemoteHandler.swift */,
-				12B1BC5227A6E8FE002E4FF8 /* MediaRemoteFramework.swift */,
-				12B1BC5827A6F6EB002E4FF8 /* MRPlaybackState.swift */,
+				12AD742F27B82705000FCD29 /* MusicBridge.swift */,
+				12AD743127B82766000FCD29 /* MusicAppHandler.swift */,
 			);
-			path = MediaRemote;
+			path = MusicBridge;
 			sourceTree = "<group>";
 		};
 		12B1BC5727A6F1B9002E4FF8 /* Discord */ = {
@@ -253,17 +257,17 @@
 			files = (
 				12E5600427A732E200B0C040 /* AppSettings.swift in Sources */,
 				12A9AD5F27A5A82C00450F22 /* UserView.swift in Sources */,
-				12B1BC5127A6E655002E4FF8 /* MediaRemoteHandler.swift in Sources */,
+				12AD743027B82705000FCD29 /* MusicBridge.swift in Sources */,
 				12E5600027A7154100B0C040 /* iTunesLookupResult.swift in Sources */,
+				12AD743227B82766000FCD29 /* MusicAppHandler.swift in Sources */,
 				12B1BC5527A6F02A002E4FF8 /* RichPresenceHandler.swift in Sources */,
 				12B1BC4F27A6E321002E4FF8 /* TrackData.swift in Sources */,
-				12B1BC5327A6E8FE002E4FF8 /* MediaRemoteFramework.swift in Sources */,
 				12A9AD5D27A5A82C00450F22 /* MusicordApp.swift in Sources */,
 				12E55FFE27A714FA00B0C040 /* iTunesAPI.swift in Sources */,
 				12B1BC5B27A6FC37002E4FF8 /* TrackView.swift in Sources */,
 				12E5600227A72F0700B0C040 /* SettingsView.swift in Sources */,
 				12B1BC4D27A6E1CE002E4FF8 /* DiscordHandler.swift in Sources */,
-				12B1BC5927A6F6EB002E4FF8 /* MRPlaybackState.swift in Sources */,
+				12AD742D27B826DD000FCD29 /* MusicBridge.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +404,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Musicord/Info.plist;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to be able to read your current track from the Apple Music app.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,6 +433,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Musicord/Info.plist;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to be able to read your current track from the Apple Music app.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
