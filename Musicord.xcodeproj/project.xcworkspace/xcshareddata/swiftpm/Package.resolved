@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "51c3fc2e4a0fcdf4a25089b288dd65b73df1b0ef",
-          "version": "2.37.0"
+          "revision": "154f1d32366449dcccf6375a173adf4ed2a74429",
+          "version": "2.38.0"
         }
       },
       {
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/cbyrneee/SwiftcordIPC.git",
         "state": {
           "branch": "main",
-          "revision": "8499c4a36f285f68be679d31f81041a5b563dfe0",
+          "revision": "b40fcbc92441812e4e1f727c7c52e9f2ccde0887",
           "version": null
         }
       },

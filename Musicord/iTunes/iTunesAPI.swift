@@ -22,14 +22,14 @@ struct iTunesAPI {
         return requestCache[term]?.results
     }
     
-    static func searchAlbum(term: String, completion: @escaping (Result<[iTunesLookupItem], Error>) -> Void) {
+    static func search(term: String, completion: @escaping (Result<[iTunesLookupItem], Error>) -> Void) {
         do {
             if requestCache.count >= 20 {
                 print("Clearing cache")
                 requestCache.removeAll()
             }
             
-            let url = try buildUrl("search", parameters: ["media": "music", "entity": "album", "limit": "1", "term": term])
+            let url = try buildUrl("search", parameters: ["media": "music", "limit": "1", "term": term])
             if let cached = getCachedSearchResult(term: term) {
                 completion(.success(cached))
                 return

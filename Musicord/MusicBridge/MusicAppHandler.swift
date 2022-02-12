@@ -10,6 +10,7 @@ import AppleScriptObjC
 
 protocol MusicAppHandlerDelegate {
     func onTrackDataUpdate()
+    func onMusicAppClosed()
 }
 
 class MusicAppHandler : ObservableObject {
@@ -22,6 +23,7 @@ class MusicAppHandler : ObservableObject {
         
     private let bridge: MusicBridge
     private let timer: Timer? = nil
+    private var wasRunning = false
     
     private init() {
         Bundle.main.loadAppleScriptObjectiveCScripts()
@@ -37,6 +39,19 @@ class MusicAppHandler : ObservableObject {
     
     @objc
     func updateTrackData() {
+        if !bridge.isRunning {
+            self.track = nil
+            
+            if wasRunning {
+                delegate?.onMusicAppClosed()
+            }
+            
+            self.wasRunning = bridge.isRunning
+            return
+        }
+        
+        self.wasRunning = bridge.isRunning
+                
         guard let info = bridge.trackInfo else {
             return
         }
@@ -57,16 +72,12 @@ class MusicAppHandler : ObservableObject {
         }
         
         let paused = bridge.playerState != .playing
-        if name == self.track?.name && artist == self.track?.artist && album == self.track?.album && paused == self.track?.paused {
+        if name == self.track?.name && artist == self.track?.artist && paused == self.track?.paused {
             return
         }
-        
-        let cachedResult = iTunesAPI.getCachedSearchResult(term: album)?.first
-        if cachedResult == nil {
-            searchAlbum(album)
-        }
                 
-        self.track = TrackData(
+        let cachedResult = iTunesAPI.getCachedSearchResult(term: "\(artist) - \(album)")?.first
+        let track = TrackData(
             name: name,
             artist: artist,
             album: album,
@@ -77,22 +88,29 @@ class MusicAppHandler : ObservableObject {
             url: cachedResult?.collectionViewUrl?.absoluteString,
             paused: paused
         )
-        
+                
+        self.track = track
         delegate?.onTrackDataUpdate()
+        
+        if cachedResult == nil {
+            searchAlbum(track)
+        }
     }
     
-    private func searchAlbum(_ album: String) {
-        iTunesAPI.searchAlbum(term: album) { result in
+    private func searchAlbum(_ track: TrackData) {
+        iTunesAPI.search(term: "\(track.artist) - \(track.album ?? track.name)") { result in
             switch result {
             case let .success(items):
                 guard let item = items.first else {
                     return
                 }
                 
-                self.track?.url = item.collectionViewUrl?.absoluteString
-                self.track?.albumArt = item.artworkUrl100?.absoluteString
+                var track = self.track
+                track?.url = item.collectionViewUrl?.absoluteString
+                track?.albumArt = item.artworkUrl100?.absoluteString
                 
                 DispatchQueue.main.async {
+                    self.track = track
                     self.delegate?.onTrackDataUpdate()
                 }
             default:

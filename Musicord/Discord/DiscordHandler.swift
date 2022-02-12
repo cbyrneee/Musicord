@@ -62,6 +62,14 @@ class DiscordHandler : ObservableObject {
         self.ipc = ipc
     }
     
+    func clearPresence() throws {
+        guard let ipc = self.ipc else {
+            throw DiscordHandlerError.notConnected
+        }
+        
+        ipc.clearPresence()
+    }
+    
     func disconnect() throws {
         guard let ipc = self.ipc else {
             throw DiscordHandlerError.notConnected
@@ -76,12 +84,10 @@ class DiscordHandler : ObservableObject {
         }
         
         if track.paused && AppSettings.shared.hideWhenPaused && !connecting {
-            ipc.disconnect()
+            ipc.clearPresence()
             return
         }
         
-        print("[DiscordHandler] Setting presence")
-
         ipc.setPresence { data in
             data.details = track.name
             data.state = "by \(track.artist)"

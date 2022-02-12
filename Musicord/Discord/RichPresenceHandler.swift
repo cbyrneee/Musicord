@@ -31,7 +31,18 @@ class RichPresenceHandler : DiscordHandlerDelegate, MusicAppHandlerDelegate {
             }
         }
         
+        print("[RichPresenceHandler] Track data updated")
         self.updatePresence()
+    }
+    
+    func onMusicAppClosed() {
+        print("[RichPresenceHandler] Music app closed")
+
+        do {
+            try DiscordHandler.shared.clearPresence()
+        } catch (let error) {
+            print(error)
+        }
     }
     
     private func updatePresence() {
