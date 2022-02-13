@@ -30,7 +30,7 @@ class DiscordHandler : ObservableObject {
 
     private init() {}
     
-    func register() throws {
+    func register(onError: @escaping (Error) -> ()) {
         let ipc = SwiftcordIPC(id: DiscordHandler.clientId)
         self.connecting = true
 
@@ -44,7 +44,6 @@ class DiscordHandler : ObservableObject {
             }
         }
         
-        
         ipc.onDisconnect = {
             self.connected = false
             self.connecting = false
@@ -53,8 +52,11 @@ class DiscordHandler : ObservableObject {
         DispatchQueue.global(qos: .background).async {
             do {
                 try ipc.connectAndBlock()
-            } catch {
-                // TODO: Error handling
+            } catch (let error) {
+                DispatchQueue.main.async {
+                    onError(error)
+                }
+                
                 self.connecting = false
             }
         }

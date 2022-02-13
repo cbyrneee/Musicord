@@ -35,12 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         setupStatusItem()
         setupMenu()
                 
-        do {
-            try richPresenceHandler.register()
-        } catch (let error) {
-            // TODO: Error handling
-            print(error)
-        }
+        richPresenceHandler.register()
     }
         
     func applicationDidBecomeActive(_ notification: Notification) {
