@@ -30,7 +30,14 @@ class MusicAppHandler : ObservableObject {
         let clazz: AnyClass = NSClassFromString("MusicBridge")!
         
         self.bridge = clazz.alloc() as! MusicBridge
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTrackData), userInfo: nil, repeats: true)
+    }
+    
+    func register() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            DispatchQueue(label: "Music Polling", qos: .utility).async {
+                self.updateTrackData()
+            }
+        }
     }
     
     func isPlaying() -> Bool {
@@ -57,8 +64,11 @@ class MusicAppHandler : ObservableObject {
                 return
             }
             
-            self.track = nil
-            delegate?.onTrackDataUpdate()
+            DispatchQueue.main.async {
+                self.track = nil
+                self.delegate?.onTrackDataUpdate()
+            }
+            
             return
         }
                 
@@ -92,8 +102,10 @@ class MusicAppHandler : ObservableObject {
             paused: paused
         )
                 
-        self.track = track
-        delegate?.onTrackDataUpdate()
+        DispatchQueue.main.async {
+            self.track = track
+            self.delegate?.onTrackDataUpdate()
+        }
         
         if cachedResult == nil {
             searchAlbum(track)

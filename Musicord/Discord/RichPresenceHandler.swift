@@ -24,6 +24,8 @@ class RichPresenceHandler : DiscordHandlerDelegate, MusicAppHandlerDelegate {
                 self.retryTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.register), userInfo: nil, repeats: true)
             }
         }
+        
+        MusicAppHandler.shared.register()
     }
     
     func onReady(data: ReadyData) {

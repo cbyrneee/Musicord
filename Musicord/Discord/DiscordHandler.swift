@@ -49,14 +49,11 @@ class DiscordHandler : ObservableObject {
             self.connecting = false
         }
         
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue(label: "Discord IPC", qos: .utility).async {
             do {
                 try ipc.connectAndBlock()
             } catch (let error) {
-                DispatchQueue.main.async {
-                    onError(error)
-                }
-                
+                onError(error)
                 self.connecting = false
             }
         }

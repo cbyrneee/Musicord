@@ -39,9 +39,8 @@ struct TrackView: View {
                 }
             }
         } else {
-            VStack {
-                Text("Nothing is playing!")
-                    .multilineTextAlignment(.center)
+            VStack(alignment: .leading) {
+                Text("Nothing is playing")
             }
         }
     }
