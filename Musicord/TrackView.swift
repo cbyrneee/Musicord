@@ -39,8 +39,10 @@ struct TrackView: View {
                 }
             }
         } else {
-            Text("Nothing is playing in Apple Music!")
-                .multilineTextAlignment(.leading)
+            VStack {
+                Text("Nothing is playing!")
+                    .multilineTextAlignment(.center)
+            }
         }
     }
 }

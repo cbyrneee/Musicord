@@ -28,10 +28,12 @@ struct UserView: View {
                         Text("Connected as **\(data.user.username)**#\(data.user.discriminator)")
                     }
                 }
-                
-                TrackView()
             }
             .padding()
+            
+            TrackView()
+                .frame(maxWidth: .infinity)
+                .padding(.bottom)
         } else {
             VStack {
                 ProgressView()
